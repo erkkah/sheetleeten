@@ -6,7 +6,7 @@
  * Font imports, referenced in :root below.
  * See https://developers.google.com/fonts/docs/getting_started.
  */
-@import url("https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto+Slab&display=swap&subset=Latin");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto+Mono&display=swap&subset=Latin");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
 :root {
@@ -26,7 +26,7 @@
     /* Divider style, dotted, dashed, solid or none */
     --dividers: solid;
 
-    /*--heading-decoration: underline;*/
+    --heading-decoration: none;
 
     /* Logo. Can be text, image or empty. */
     --angel: "\1f47c";
@@ -123,6 +123,10 @@ a {
     word-wrap: break-word;
 }
 
+header a {
+    border: none;
+}
+
 h1, h2, h3, h4, h5 {
     text-decoration: var(--heading-decoration);
     margin: 12px 0 4px 0;
@@ -159,6 +163,11 @@ pre code {
     display: block;
     overflow: scroll;
     scrollbar-width: none;
+    scroll-padding: 0;
+}
+
+code::-webkit-scrollbar {
+    display: none;
 }
 
 table {
@@ -184,7 +193,7 @@ td:nth-child(2) {
 
 /* Content tricks */
 
-.logo::after {
+.logo::before {
     content: var(--logo);
     margin-right: .5rem;
 }
@@ -194,10 +203,12 @@ td:nth-child(2) {
 }
 
 /* MDI hax */
-img[src^="@mdi"] {
+a[href^="mdi"] {
+    pointer-events: none;
     font-family: 'Material Icons';
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
     display: inline-block;
     line-height: 1;
     text-transform: none;
@@ -211,38 +222,39 @@ img[src^="@mdi"] {
     text-rendering: optimizeLegibility;
     /* Support for Firefox. */
     -moz-osx-font-smoothing: grayscale;
-  
     vertical-align: baseline;
+    text-decoration: none;
+    border: none;
 }
 
-img[src^="@mdi:"][src*=":18"] {
+a[href^="mdi:"][href*=":18"] {
     font-size: 18px;
 }
 
-img[src^="@mdi:"][src*=":24"] {
+a[href^="mdi:"][href*=":24"] {
     font-size: 24px;
 }
 
-img[src^="@mdi:"][src*=":32"] {
+a[href^="mdi:"][href*=":32"] {
     font-size: 32px;
 }
 
-img[src^="@mdi:"][src*=":48"] {
+a[href^="mdi:"][href*=":48"] {
     font-size: 48px;
 }
 
-img[src^="@mdi:"][src*=":mid"] {
+a[href^="mdi:"][href*=":mid"] {
     vertical-align: middle;
 }
 
-img[src^="@mdi:"][src*=":drop"] {
-    filter: drop-shadow(1px 1px 0.5px var(--c0));
+a[href^="mdi:"][href*=":drop"] {
+    filter: drop-shadow(1px 2px 0.5px var(--c0));
 }
 
-img[src^="@mdi:"][src*=":black"] {
+a[href^="mdi:"][href*=":black"] {
     color: black;
 }
 
-img[src^="@mdi:"][src*=":white"] {
+a[href^="mdi:"][href*=":white"] {
     color: white;
 }
