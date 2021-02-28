@@ -1,0 +1,248 @@
+/*
+ * Sheetleeteh style sheet.
+ */
+
+/*
+ * Font imports, referenced in :root below.
+ * See https://developers.google.com/fonts/docs/getting_started.
+ */
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto+Slab&display=swap&subset=Latin");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+:root {
+    /*
+     * Four-color palette from dark to light, or the other way around.
+     * This is https://lospec.com/palette-list/ice-cream-gb
+     */
+    --c0: #7c3f58;
+    --c1: #eb6b6f;
+    --c2: #f9a875;
+    --c3: #fff6d3;
+
+    /* Fonts, imported above */
+    --variable: "Roboto Slab", sans-serif;
+    --fixed: "Roboto Mono", monospace;
+
+    /* Divider style, dotted, dashed, solid or none */
+    --dividers: solid;
+
+    /*--heading-decoration: underline;*/
+
+    /* Logo. Can be text, image or empty. */
+    --angel: "\1f47c";
+    --logo: var(--angel);
+    /*--logo: url("favicon.png");*/
+
+    /* Max centered content width */
+    --maxwidth: 900px;
+}
+
+/**
+Tweak and add anything below for detailed control - or don't.
+**/
+
+body {
+    margin: 0;
+    font-family: var(--variable);
+    font-size: 1em;
+}
+
+/* The whole page */
+.page {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: stretch;
+    background-color: var(--c0);
+    min-height: 100vh;
+}
+
+/* Horizontally centered content */
+.center {
+    display: flex;
+    flex-direction: column;
+    max-width: var(--maxwidth);
+    flex-grow: 1;
+    padding: 8px;
+    background-color: var(--c1);
+    justify-content: stretch;
+}
+
+/* Page parts: header, content, section, footer */
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8px 8px 8px;
+    border-bottom: 2px solid var(--c0);
+}
+
+header * {
+    text-align: right;
+    color: var(--c3);
+    flex-grow: 1;
+}
+
+header h1 {
+    font-weight: bold;
+    text-decoration: none;
+    display: inline;
+    margin: 0 0 0 2px;
+    flex-shrink: 1;
+    flex-grow: 0;
+    white-space: nowrap;
+}
+
+#content {
+    flex-grow: 1;
+}
+
+section {
+    margin-top: 8px;
+    margin-left: 8px;
+    padding-bottom: 8px;
+    border-bottom: 2px var(--dividers) var(--c2);
+    color: var(--c3);
+    max-width: calc(100vw - 40px);
+}
+
+footer {
+    font-size: smaller;
+    text-align: center;
+    color: var(--c3);
+}
+
+/* Common elements */
+
+a {
+    text-decoration: none;
+    border-bottom: 0.5px solid var(--c2);
+    color: var(--c3);
+    word-wrap: break-word;
+}
+
+h1, h2, h3, h4, h5 {
+    text-decoration: var(--heading-decoration);
+    margin: 12px 0 4px 0;
+}
+
+pre {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+h1 + p,
+h2 + p,
+h3 + p,
+h4 + p,
+h5 + p {
+    margin-top: 4px;
+}
+
+p {
+    margin-top: 8px;
+    margin-bottom: 4px;
+}
+
+code {
+    font-family: var(--fixed);
+    background-color: var(--c2);
+    color: var(--c0);
+    font-size: smaller;
+}
+
+pre code {
+    padding: 4px 2px;
+    margin: 0;
+    display: block;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+
+table {
+    --border: 1px var(--dividers) var(--c2);
+}
+
+th, td {
+    padding: 0 2px 0 4px;
+    margin: 0;
+}
+
+tr {
+    margin: 0;
+}
+
+th {
+    border-bottom: var(--border);
+}
+
+td:nth-child(2) {
+    border-bottom: var(--border);
+}
+
+/* Content tricks */
+
+.logo::after {
+    content: var(--logo);
+    margin-right: .5rem;
+}
+
+.email::after {
+    content: attr(data-name) "@" attr(data-domain) "." attr(data-tld);
+}
+
+/* MDI hax */
+img[src^="@mdi"] {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+  
+    vertical-align: baseline;
+}
+
+img[src^="@mdi:"][src*=":18"] {
+    font-size: 18px;
+}
+
+img[src^="@mdi:"][src*=":24"] {
+    font-size: 24px;
+}
+
+img[src^="@mdi:"][src*=":32"] {
+    font-size: 32px;
+}
+
+img[src^="@mdi:"][src*=":48"] {
+    font-size: 48px;
+}
+
+img[src^="@mdi:"][src*=":mid"] {
+    vertical-align: middle;
+}
+
+img[src^="@mdi:"][src*=":drop"] {
+    filter: drop-shadow(1px 1px 0.5px var(--c0));
+}
+
+img[src^="@mdi:"][src*=":black"] {
+    color: black;
+}
+
+img[src^="@mdi:"][src*=":white"] {
+    color: white;
+}

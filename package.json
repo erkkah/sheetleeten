@@ -1,0 +1,20 @@
+{
+  "name": "sheetleeteh",
+  "version": "1.0.0",
+  "description": "",
+  "browser": "src/index.html",
+  "scripts": {
+    "serve": "parcel serve -d site src/index.html",
+    "build": "parcel build -d site src/index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-markdown-it": "^0.1.4",
+    "parcel-plugin-static-files-copy": "^2.5.1",
+    "typescript": "^4.2.2"
+  },
+  "staticFiles": {
+  }
+}
