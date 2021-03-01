@@ -1,5 +1,5 @@
 /*
- * Sheetleeteh "angel" theme.
+ * Sheetleeten "angel" theme.
  */
 
 /*
@@ -7,6 +7,7 @@
  * See https://developers.google.com/fonts/docs/getting_started.
  */
  @import url("https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto+Mono&display=swap&subset=Latin");
+ @import url("https://fonts.googleapis.com/css?family=Fredoka+One&display=swap&subset=Latin&text=$headline");
 
 :root {
     /*
@@ -21,11 +22,11 @@
     /* Fonts, imported above */
     --variable-font: "Roboto Slab", sans-serif;
     --fixed-font: "Roboto Mono", monospace;
-    --logo-font: var(--variable);
+    --headline-font: "Fredoka One";
 
-    /* Divider style, dotted, dashed, solid or none */
-    --divider-style: solid;
+    /* Divider style: size + dotted, dashed, solid or none */
+    --divider-style: 3px dotted;
 
     /* Heading decoration, excluding color: */
-    --heading-decoration: wavy 1.5px underline;
+    --heading-decoration: 1px dashed underline;
 }

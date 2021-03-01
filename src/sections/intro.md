@@ -1,5 +1,6 @@
 ---
-section: intro
+title: Sheetleeten - intro
+sections: ["intro"]
 ---
 
 ## What?
@@ -7,3 +8,11 @@ section: intro
 [Link](#details)
 
 [face](mdi)
+
+> Did you know?
+
+### List of things
+
+* One
+* Two
+* Infinity

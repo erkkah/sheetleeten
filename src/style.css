@@ -1,11 +1,8 @@
 /*
- * Sheetleeteh main style sheet.
+ * Sheetleeten main style sheet.
  */
 
-@import "./mdi.css";
-@import "./theme.css";
-
-:root {
+ :root {
     /* Max width of centered content */
     --maxwidth: 900px;
 
@@ -20,7 +17,7 @@
     /* Fonts. Use browser by default */
     --variable: var(--variable-font, sans-serif);
     --fixed: var(--fixed-font, monospace);
-    --logo: var(--logo-font, var(--variable));
+    --headline: var(--headline-font, var(--variable));
 
     /* Divider style: dotted, dashed, solid or none */
     --dividers: var(--divider-style, solid);
@@ -79,14 +76,18 @@ header * {
 }
 
 header h1 {
-    font-weight: bold;
+    font-weight: normal;
     text-decoration: none;
     display: inline;
     margin: 0 0 0 2px;
     flex-shrink: 1;
     flex-grow: 0;
     white-space: nowrap;
-    font-family: var(--logo);
+    font-family: var(--headline);
+}
+
+header a.headline::before {
+    content: "$headline";
 }
 
 header img.logo {
@@ -103,7 +104,7 @@ section {
     margin-top: 8px;
     margin-left: 8px;
     padding-bottom: 8px;
-    border-bottom: 2px var(--dividers) var(--c2);
+    border-bottom: var(--dividers) var(--c2);
     color: var(--c3);
     max-width: calc(100vw - 40px);
 }
@@ -171,8 +172,13 @@ code::-webkit-scrollbar {
     display: none;
 }
 
+blockquote {
+    border-left: var(--dividers) var(--c2);
+    padding-left: 1em;
+}
+
 table {
-    --border: 1px var(--dividers) var(--c2);
+    --border: var(--dividers) var(--c2);
 }
 
 th, td {

@@ -1,5 +1,5 @@
 ---
-section: details
+title: "DETAILS"
 ---
 
 ## Details

@@ -1,20 +1,51 @@
 {
-  "name": "sheetleeteh",
+  "name": "sheetleeten",
   "version": "1.0.0",
-  "description": "",
+  "description": "Awesome tiny Markdown-driven themed one-pager webapp",
   "browser": "src/index.html",
   "scripts": {
-    "serve": "parcel serve -d site src/index.html",
-    "build": "parcel build -d site src/index.html"
+    "serve": "parcel serve -d site --no-cache src/index.html",
+    "build": "parcel build -d site --no-cache src/index.html"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Erik Agsjö",
+  "license": "MIT",
   "devDependencies": {
     "parcel-bundler": "^1.12.4",
     "parcel-plugin-markdown-it": "^0.1.4",
     "parcel-plugin-static-files-copy": "^2.5.1",
+    "postcss-simple-vars": "^5.0.2",
+    "posthtml-expressions": "^1.7.1",
     "typescript": "^4.2.2"
   },
-  "staticFiles": {
+  "staticFiles": {},
+  "posthtml": {
+    "plugins": {
+      "posthtml-expressions": {
+        "locals": {
+          "theme": "themes/angel.css",
+          "mdi": true,
+          "keywords": "awesome markdown skitliten onepager webapp",
+          "logo": null,
+          "title": "Sheetleeten",
+          "tagline": "This machine kills bitrot",
+          "copy": "&copy;2021 Sheetleeten",
+          "email": {
+            "to": "hello",
+            "domain": "example",
+            "tld": "com"
+          }
+        }
+      }
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "postcss-simple-vars": {
+        "silent": false,
+        "variables": {
+          "headline": "Sheetleeten"
+        }
+      }
+    }
   }
 }

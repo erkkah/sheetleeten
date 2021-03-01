@@ -36,6 +36,10 @@ function build(pageName: string) {
         const section = sections[sectionName];
         addSection(content, section.html)
     }
+
+    if (page.meta.title) {
+        document.title = page.meta.title;
+    }
 }
 
 function addSection(content: HTMLElement, html: string) {
