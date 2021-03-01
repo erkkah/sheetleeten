@@ -1,0 +1,31 @@
+/*
+ * Sheetleeteh "angel" theme.
+ */
+
+/*
+ * Font imports, referenced below.
+ * See https://developers.google.com/fonts/docs/getting_started.
+ */
+ @import url("https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto+Mono&display=swap&subset=Latin");
+
+:root {
+    /*
+     * Four-color palette from dark to light, or the other way around.
+     * This is https://lospec.com/palette-list/ice-cream-gb
+     */
+    --color0: #7c3f58;
+    --color1: #eb6b6f;
+    --color2: #f9a875;
+    --color3: #fff6d3;
+
+    /* Fonts, imported above */
+    --variable-font: "Roboto Slab", sans-serif;
+    --fixed-font: "Roboto Mono", monospace;
+    --logo-font: var(--variable);
+
+    /* Divider style, dotted, dashed, solid or none */
+    --divider-style: solid;
+
+    /* Heading decoration, excluding color: */
+    --heading-decoration: wavy 1.5px underline;
+}

@@ -1,40 +1,32 @@
 /*
- * Sheetleeteh style sheet.
+ * Sheetleeteh main style sheet.
  */
 
-/*
- * Font imports, referenced in :root below.
- * See https://developers.google.com/fonts/docs/getting_started.
- */
-@import url("https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto+Mono&display=swap&subset=Latin");
-@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import "./mdi.css";
+@import "./theme.css";
 
 :root {
+    /* Max width of centered content */
+    --maxwidth: 900px;
+
     /*
      * Four-color palette from dark to light, or the other way around.
-     * This is https://lospec.com/palette-list/ice-cream-gb
      */
-    --c0: #7c3f58;
-    --c1: #eb6b6f;
-    --c2: #f9a875;
-    --c3: #fff6d3;
+    --c0: var(--color0, #111111);
+    --c1: var(--color1, #555555);
+    --c2: var(--color2, #aaaaaa);
+    --c3: var(--color3, #eeeeee);
 
-    /* Fonts, imported above */
-    --variable: "Roboto Slab", sans-serif;
-    --fixed: "Roboto Mono", monospace;
+    /* Fonts. Use browser by default */
+    --variable: var(--variable-font, sans-serif);
+    --fixed: var(--fixed-font, monospace);
+    --logo: var(--logo-font, var(--variable));
 
-    /* Divider style, dotted, dashed, solid or none */
-    --dividers: solid;
+    /* Divider style: dotted, dashed, solid or none */
+    --dividers: var(--divider-style, solid);
 
-    --heading-decoration: none;
-
-    /* Logo. Can be text, image or empty. */
-    --angel: "\1f47c";
-    --logo: var(--angel);
-    /*--logo: url("favicon.png");*/
-
-    /* Max centered content width */
-    --maxwidth: 900px;
+    /* Heading decoration style: dotted, et.c. */
+    --heading-style: var(--heading-decoration, none);
 }
 
 /**
@@ -73,6 +65,7 @@ body {
 header {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     padding: 0 8px 8px 8px;
@@ -93,6 +86,13 @@ header h1 {
     flex-shrink: 1;
     flex-grow: 0;
     white-space: nowrap;
+    font-family: var(--logo);
+}
+
+header img.logo {
+    flex-shrink: 1;
+    flex-grow: 0;
+    margin-right: .5rem;
 }
 
 #content {
@@ -128,7 +128,8 @@ header a {
 }
 
 h1, h2, h3, h4, h5 {
-    text-decoration: var(--heading-decoration);
+    text-decoration: var(--heading-style);
+    text-decoration-color: var(--c3);
     margin: 12px 0 4px 0;
 }
 
@@ -193,11 +194,6 @@ td:nth-child(2) {
 
 /* Content tricks */
 
-.logo::before {
-    content: var(--logo);
-    margin-right: .5rem;
-}
-
 .email::after {
     content: attr(data-name) "@" attr(data-domain) "." attr(data-tld);
 }
@@ -216,6 +212,8 @@ a[href^="mdi"] {
     word-wrap: normal;
     white-space: nowrap;
     direction: ltr;
+    font-feature-settings: "liga";
+    -moz-font-feature-settings: "liga";
     /* Support for all WebKit browsers. */
     -webkit-font-smoothing: antialiased;
     /* Support for Safari and Chrome. */
