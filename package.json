@@ -1,7 +1,8 @@
 {
   "name": "sheetleeten",
   "version": "1.0.0",
-  "description": "Awesome tiny Markdown-driven themed one-pager webapp",
+  "description": "Awesome tiny Markdown-driven themed static site generator",
+  "keywords": ["tiny", "markdown", "static", "site", "generator", "themed", "skitliten"],
   "browser": "src/index.html",
   "scripts": {
     "serve": "parcel serve -d site --no-cache src/index.html",
@@ -10,8 +11,9 @@
   "author": "Erik Agsjö",
   "license": "MIT",
   "devDependencies": {
+    "markdown-it-highlightjs": "^3.4.0",
     "parcel-bundler": "^1.12.4",
-    "parcel-plugin-markdown-it": "^0.1.4",
+    "parcel-plugin-markdown-it": "github:erkkah/parcel-plugin-markdown-it#update-highlight",
     "parcel-plugin-static-files-copy": "^2.5.1",
     "postcss-simple-vars": "^5.0.2",
     "posthtml-expressions": "^1.7.1",
@@ -22,7 +24,11 @@
     "plugins": {
       "posthtml-expressions": {
         "locals": {
-          "theme": "themes/angel.css",
+          "theme": "angel",
+          "code": {
+            "highlight": true,
+            "theme": "rainbow"
+          },
           "mdi": true,
           "keywords": "awesome markdown skitliten onepager webapp",
           "logo": null,

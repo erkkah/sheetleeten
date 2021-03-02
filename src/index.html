@@ -8,7 +8,10 @@
     <if condition="mdi">
         <link rel="stylesheet" href="mdi.css">
     </if>
-    <link rel="stylesheet" href="{{theme}}">
+    <if condition="code.highlight">
+        <link rel="stylesheet" href="../node_modules/highlight.js/styles/{{code.theme}}.css">
+    </if>
+    <link rel="stylesheet" href="themes/{{theme}}.css">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.png" sizes="192x192">
     <title>{{title}}</title>
@@ -27,7 +30,9 @@
             <div id="content"></div>
             <footer>
                 <span>{{{copy}}}</span>
-                <span data-name="{{email.to}}" data-domain="{{email.domain}}" data-tld="{{email.tld}}" class="email"></span></footer>
+                <if condition="email.to">
+                    <span data-name="{{email.to}}" data-domain="{{email.domain}}" data-tld="{{email.tld}}" class="email"></span></footer>
+                </if>
         </div>
     </div>
     <script src="site.ts"></script>
