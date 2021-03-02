@@ -115,7 +115,7 @@ By setting the configuration parameter `mdi` to true, you can use [Material Desi
 
 This looks like a link, but will produce the MDI "face" icon. The icon size and style can be tweaked as well.
 
-[PostHTML]:https://kaka.nu
-[PostCSS]:https://kaka.nu
+[PostHTML]:https://posthtml.org
+[PostCSS]:https://postcss.org
 [Cuttlebelle]:https://cuttlebelle.com
 [MDI]:https://material.io/resources/icons
