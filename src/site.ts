@@ -1,4 +1,4 @@
-import sections from "./sections/*.md";
+import sections from "./content/*.md";
 
 window.addEventListener("hashchange", (ev) => {
     load(ev.newURL);
@@ -28,6 +28,9 @@ function build(pageName: string) {
     }
 
     const page = sections[pageName] || sections["404"];
+    if (!page) {
+        addSection(content, "404 :(");
+    }
 
     const sectionNames = page.meta.sections || [];
     page.html.trim() && addSection(content, page.html);
