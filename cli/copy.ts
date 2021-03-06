@@ -12,7 +12,7 @@ export async function copyFiles(target: string) {
         throw new Error(`Target "${target}" already exists`);
     }
 
-    await mkdir(target, {recursive: true});
+    await mkdir(target, { recursive: true });
     await createPackage(target);
     await copy(join(__dirname, "..", "src"), join(target, "src"), {
         clobber: false,
@@ -67,14 +67,14 @@ interface IPackageTemplate {
 async function createPackage(target: string) {
     const now = new Date();
     const year = now.getFullYear();
-    
+
     const packageTemplate: IPackageTemplate = {
         name: basename(target),
         version: "1.0.0",
         browser: "src/index.html",
         scripts: {
             "serve": "parcel serve -d site --no-cache src/index.html",
-            "build": "parcel build -d site --no-cache src/index.html"        
+            "build": "parcel build -d site --no-cache src/index.html",
         },
         posthtml: {
             plugins: {
@@ -111,7 +111,7 @@ async function createPackage(target: string) {
         },
         devDependencies: await extractDevDependencies(),
     };
-    
+
     const packageData = JSON.stringify(packageTemplate, null, 2);
     await writeFile(join(target, "package.json"), packageData);
 }
@@ -121,6 +121,7 @@ async function extractDevDependencies(): Promise<IPackageTemplate["devDependenci
     const packageData = JSON.parse(packageJSON.toString());
 
     const depList = [
+        "@babel/preset-env",
         "markdown-it-highlightjs",
         "parcel-bundler",
         "parcel-plugin-markdown-it",

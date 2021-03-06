@@ -24,13 +24,13 @@ export async function cli(args: string[]) {
         });
 
         if (options.git) {
-            await progressRun(twisters, "git", `${plug}  Creating git repo`, async () => {
+            await progressRun(twisters, "git", `${plug} Creating git repo`, async () => {
                 await initGit(options.target);
             });
         }
 
         if (options.install) {
-            await progressRun(twisters, "npm", `${lorry}  Installing dependencies`, async () => {
+            await progressRun(twisters, "npm", `${lorry} Installing dependencies`, async () => {
                 await installDeps(options.target);
             });
         }
