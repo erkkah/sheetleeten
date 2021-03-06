@@ -19,6 +19,10 @@ export async function copyFiles(target: string) {
         filter: (path) => !path.endsWith(".md"),
         stopOnErr: true,
     });
+    await copy(join(__dirname, "..", "cli", "template"), join(target, "src", "content"), {
+        clobber: false,
+        stopOnErr: true,
+    });
 }
 
 interface IAppSettings {
