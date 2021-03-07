@@ -24,6 +24,9 @@
 
     /* Heading decoration style: dotted, et.c. */
     --heading-style: var(--heading-decoration, none);
+
+    /* Decorator content for horizontal rule */
+    --rule-content: var(--rule-decoration, none);
 }
 
 /**
@@ -172,7 +175,7 @@ hr {
 }
 
 hr::after {
-    content: "//";
+    content: var(--rule-content);
     background: var(--c1);
     position: relative;
     top: calc(-1ch - 2px);
@@ -187,7 +190,9 @@ code {
     font-family: var(--fixed);
     background-color: var(--c2);
     color: var(--c0);
-    font-size: smaller;
+    /* Slight reduction to compensate for the perceived enlargement
+    of fixed vs variable fonts */
+    font-size: 0.98em;
 }
 
 pre code {
