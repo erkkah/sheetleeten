@@ -1,0 +1,32 @@
+/*
+ * Sheetleeten "bubblegum" theme.
+ */
+
+/*
+ * Font imports, referenced below.
+ * See https://developers.google.com/fonts/docs/getting_started.
+ */
+@import url("https://fonts.googleapis.com/css?family=Acme|Consolas&display=swap&subset=Latin");
+@import url("https://fonts.googleapis.com/css?family=Akaya+Telivigala&display=swap&subset=Latin&text=$headline");
+
+:root {
+    /*
+     * Four-color palette from dark to light, or the other way around.
+     * This is https://www.canva.com/colors/color-palettes/bubblegum-sweetness/
+     */
+    --color3: #0c6170;
+    --color2: #37beb0;
+    --color1: #a4e5e0;
+    --color0: #dbf5f0;
+
+    /* Fonts, imported above */
+    --variable-font: "Acme", sans-serif;
+    --fixed-font: "Consolas", monospace;
+    --headline-font: "Akaya Telivigala";
+
+    /* Divider style: size + dotted, dashed, solid or none */
+    --divider-style: 3px solid;
+
+    /* Heading decoration style: size + dotted, dashed, solid or none */
+    --heading-decoration: none;
+}

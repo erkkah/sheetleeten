@@ -1,0 +1,32 @@
+/*
+ * Sheetleeten "pulp" theme.
+ */
+
+/*
+ * Font imports, referenced below.
+ * See https://developers.google.com/fonts/docs/getting_started.
+ */
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Inconsolata&display=swap&subset=Latin");
+@import url("https://fonts.googleapis.com/css?family=Cinzel&display=swap&subset=Latin&text=$headline");
+
+:root {
+    /*
+     * Four-color palette from dark to light, or the other way around.
+     * This is https://www.canva.com/colors/color-palettes/pulp-slices/
+     */
+    --color0: #0a4158;
+    --color1: #4b8378;
+    --color2: #ff9636;
+    --color3: #efd7d0;
+
+    /* Fonts, imported above */
+    --variable-font: "Montserrat", sans-serif;
+    --fixed-font: "Inconsolate", monospace;
+    --headline-font: "Cinzel";
+
+    /* Divider style: size + dotted, dashed, solid or none */
+    --divider-style: 0.5px dashed;
+
+    /* Heading decoration style: size + dotted, dashed, solid or none */
+    --heading-decoration: none;
+}
