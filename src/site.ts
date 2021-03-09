@@ -1,7 +1,12 @@
 import sections from "./content/*.md";
 
-window.addEventListener("hashchange", (ev) => {
-    load(ev.newURL);
+window.addEventListener("popstate", (ev) => {
+    load(document.URL);
+    const state = ev.state;
+    if (!(state?.sheetleeten)) {
+        window.scrollTo(0, 0);
+        history.replaceState({sheetleeten: true}, "");
+    }
 });
 
 load(document.URL);
@@ -14,6 +19,14 @@ function load(urlString: string) {
     } else {
         const page = hash.slice(1);
         build(page);
+    }
+    
+    const anchors = document.getElementsByTagName("a");
+    for (const anchor of anchors) {
+        console.log(anchor.href, urlString);
+        if (anchor.href == urlString) {
+            anchor.classList.add("target");
+        }
     }
 }
 
