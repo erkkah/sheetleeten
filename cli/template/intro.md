@@ -1,4 +1,4 @@
-## [face](mdi) More details about my site
+## [face](mdi) A first introduction section
 
 Dolor sit amet, and a code example:
 

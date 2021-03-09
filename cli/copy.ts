@@ -84,11 +84,11 @@ async function createPackage(target: string) {
             plugins: {
                 "posthtml-expressions": {
                     locals: {
-                        theme: "angel",
-                        title: "My Site",
+                        theme: "coffee",
+                        title: "Title",
                         keywords: "",
                         logo: false,
-                        tagline: "Sites like these...",
+                        tagline: "Tagline",
                         copy: `&copy; ${year}`,
                         email: {
                             to: "",
@@ -108,7 +108,7 @@ async function createPackage(target: string) {
             plugins: {
                 "postcss-simple-vars": {
                     variables: {
-                        headline: "My Site"
+                        headline: "Headline"
                     }
                 }
             }
@@ -129,9 +129,9 @@ async function extractDevDependencies(): Promise<IPackageTemplate["devDependenci
         "markdown-it-highlightjs",
         "parcel-bundler",
         "parcel-plugin-markdown-it",
-        "parcel-plugin-static-files-copy",
         "postcss-simple-vars",
         "posthtml-expressions",
+        "rimraf",
         "typescript",
     ];
 

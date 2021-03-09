@@ -1,7 +1,7 @@
 {
   "name": "sheetleeten",
   "version": "1.0.0",
-  "description": "Awesome tiny Markdown-driven themed static site generator",
+  "description": "Tiny Markdown-driven themed static site generator",
   "keywords": [
     "tiny",
     "markdown",
@@ -17,8 +17,8 @@
     "sheetleeten": "bin/sheetleeten"
   },
   "scripts": {
-    "serve": "parcel serve -d site --no-cache src/index.html",
-    "build": "parcel build -d site --no-cache src/index.html"
+    "serve": "rimraf dev && parcel serve -d dev --no-cache src/index.html",
+    "build": "rimraf prod && parcel build -d prod --no-cache --no-source-maps src/index.html"
   },
   "author": "Erik Agsjö",
   "license": "MIT",
@@ -33,6 +33,7 @@
     "parcel-plugin-static-files-copy": "^2.5.1",
     "postcss-simple-vars": "^5.0.2",
     "posthtml-expressions": "^1.7.1",
+    "rimraf": "^2.7.1",
     "typescript": "^4.2.2"
   },
   "staticFiles": {},
@@ -40,7 +41,7 @@
     "plugins": {
       "posthtml-expressions": {
         "locals": {
-          "theme": "angel",
+          "theme": "coffee",
           "code": {
             "highlight": true,
             "theme": "rainbow"
@@ -49,7 +50,7 @@
           "keywords": "awesome markdown skitliten onepager webapp",
           "logo": null,
           "title": "Sheetleeten",
-          "tagline": "This machine kills bitrot",
+          "tagline": "This machine <b>kills</b> bitrot",
           "copy": "&copy;2021 Sheetleeten",
           "email": {
             "to": "hello",
