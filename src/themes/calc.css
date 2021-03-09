@@ -1,5 +1,5 @@
 /*
- * Sheetleeten "pulp" theme.
+ * Sheetleeten "calc" theme.
  */
 
 /*
@@ -10,18 +10,17 @@
 @import url("https://fonts.googleapis.com/css?family=Cinzel&display=swap&subset=Latin&text=$headline");
 
 :root {
-    /*
-     * Four-color palette from dark to light, or the other way around.
-     * This is https://www.canva.com/colors/color-palettes/pulp-slices/
-     */
-    --color0: #0a4158;
-    --color1: #4b8378;
-    --color2: #ff9636;
-    --color3: #efd7d0;
+    /* HSL - based palette generation */
+    --startH: 20deg;
+    --stepH: 60deg;
+    --startS: 10%;
+    --scaleS: 1.2;
+    --startL: 85%;
+    --scaleL: 0.6;
 
     /* Fonts, imported above */
     --variable-font: "Montserrat", sans-serif;
-    --fixed-font: "Inconsolate", monospace;
+    --fixed-font: "Inconsolata", monospace;
     --headline-font: "Cinzel";
 
     /* Divider style: size + dotted, dashed, solid or none */

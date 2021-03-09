@@ -13,10 +13,10 @@
     /*
      * Four-color palette from dark to light, or the other way around.
      */
-    --color3: #1F232C;
-    --color2: #83746E;
-    --color1: #DFD6D1;
     --color0: #EEE;
+    --color1: #DFD6D1;
+    --color2: #83746E;
+    --color3: #1F232C;
 
     /* Fonts, imported above */
     --variable-font: "Open Sans", sans-serif;
