@@ -14,6 +14,10 @@ export async function copyFiles(target: string) {
 
     await mkdir(target, { recursive: true });
     await createPackage(target);
+    await copy(join(__dirname, "..", ".gitignore"), target, {
+        clobber: false,
+        stopOnErr: true,
+    });
     await copy(join(__dirname, "..", "src"), join(target, "src"), {
         clobber: false,
         filter: (path) => !path.endsWith(".md"),
