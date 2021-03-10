@@ -5,9 +5,9 @@ sections: ["links"]
 
 ## Using Material Design Icons
 
-Sheetleeten includes special Markdown anchor syntax to use Material Design Icons.
+Sheetleeten includes special Markdown link syntax to use Material Design Icons.
 
-Creating an anchor where the href starts with "mdi" will draw the icon matching the value of the anchor title:
+Creating an link where the href starts with "mdi" will draw the icon matching the value of the link title:
 
 ```markdown
 Like this: [face](mdi)
@@ -36,9 +36,13 @@ The syntax allows for some tweaking of the icon using colon-separated attributes
 | black | force black color |
 | white | force white color |
 
+#### About sizes and alignment
+By default, the icons will use the *current* font size and *baseline* alignment.
+The actual results depend on how well that fits with the current font.
+
 ### Icon names
 
-All valid icon names can be found at the [MDI site](https://material.io/resources/icons).
+All valid icon names can be found at the [Google Fonts site](https://fonts.google.com/icons).
 
 Some examples:
 

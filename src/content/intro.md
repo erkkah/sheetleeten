@@ -115,4 +115,4 @@ This looks like a link, but will produce the MDI "face" icon. The icon size and 
 [PostHTML]:https://posthtml.org
 [PostCSS]:https://postcss.org
 [Cuttlebelle]:https://cuttlebelle.com
-[MDI]:https://material.io/resources/icons
+[MDI]:https://fonts.google.com/icons
