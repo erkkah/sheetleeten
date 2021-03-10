@@ -152,7 +152,7 @@ a {
     word-wrap: break-word;
 }
 
-a.target {
+a[href^="#"].target {
     pointer-events: none;
     cursor: text;
     filter: grayscale(1);
