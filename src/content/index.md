@@ -1,3 +1,4 @@
 ---
-sections: ["intro", "links"]
+before: ["links"]
+after: ["intro"]
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Sheetleeten - Getting started"
-sections: ["links"]
+before: ["links"]
 ---
 
 ## Getting started
@@ -29,7 +29,7 @@ $ npm run serve
 
 * Open the address printed by the development server in your browser and start working on the content in `src/content`.
 
-The development server will automatically hot-reload any changed made to content, but you will need to restart the server for changes in `package.json` and when adding new Markdown files.
+The development server will automatically hot-reload any changes made to content, but you will need to restart the server for changes to `package.json` and when adding new Markdown files.
 
 ### Building for production
 
@@ -39,5 +39,4 @@ To create a production build, run:
 $ npm run build
 ```
 
-This will generated the site files in the `prod` directory, ready for deployment.
-
+This will generate the site files to the `prod` directory, ready for deployment.

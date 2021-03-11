@@ -37,7 +37,7 @@
     --c2: var(--color2, var(--cc2, #aaaaaa));
     --c3: var(--color3, var(--cc3, #eeeeee));
 
-    /* Fonts. Use browser by default */
+    /* Fonts. Use browser fonts by default */
     --variable: var(--variable-font, sans-serif);
     --fixed: var(--fixed-font, monospace);
     --headline: var(--headline-font, var(--variable));
@@ -109,7 +109,13 @@ header h1 {
     flex-shrink: 1;
     flex-grow: 0;
     white-space: nowrap;
+    align-self: center;
     font-family: var(--headline);
+    font-size: 2em;
+}
+
+header span:first-of-type {
+    display: flex;
 }
 
 header a.headline::before {
@@ -120,6 +126,9 @@ header img.logo {
     flex-shrink: 1;
     flex-grow: 0;
     margin-right: .5rem;
+    font-family: var(--headline);
+    font-size: 2em;
+    max-height: 1.5em;
 }
 
 #content {
@@ -347,3 +356,29 @@ a[href^="mdi:"][href*=":black"] {
 a[href^="mdi:"][href*=":white"] {
     color: white;
 }
+
+/* img styling */
+img {
+    max-width: 90vw;
+}
+
+img[src*="?"][src*=":drop"] {
+    filter: drop-shadow(2px 2px 1px var(--c0));
+}
+
+img[src*="?"][src*=":frame"] {
+    border: 1px solid var(--c0);
+}
+
+img[src*="?"][src*=":640"] {
+    width: 640px;
+}
+
+img[src*="?"][src*=":320"] {
+    width: 320px;
+}
+
+img[src*="?"][src*=":160"] {
+    width: 160px;
+}
+

@@ -1,6 +1,6 @@
 ---
 title: "Sheetleeten - Material Design Icons"
-sections: ["links"]
+before: ["links"]
 ---
 
 ## Using Material Design Icons

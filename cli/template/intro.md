@@ -1,4 +1,4 @@
-## [face](mdi) A first introduction section
+## [face](mdi) A section
 
 Dolor sit amet, and a code example:
 
@@ -8,4 +8,4 @@ function hello() {
 }
 ```
 
-Check this [other](#another) page!
+Check out this [other](#another) page!

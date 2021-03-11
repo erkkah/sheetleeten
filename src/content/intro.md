@@ -32,10 +32,12 @@ Content files can be included as a subsections by listing them in the frontmatte
 
 ```markdown
 ---
-sections: ["one", "another"]
+before: ["one"]
+after: ["another"]
 ---
 
 This page has two sections in addition to this one.
+One *before* and another *after*.
 ```
 
 ### [tune](mdi) Configuration

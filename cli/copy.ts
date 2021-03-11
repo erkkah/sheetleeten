@@ -14,7 +14,7 @@ export async function copyFiles(target: string) {
 
     await mkdir(target, { recursive: true });
     await createPackage(target);
-    await copy(join(__dirname, "..", ".gitignore"), target, {
+    await copy(join(__dirname, "..", ".gitignore"), join(target, ".gitignore"), {
         clobber: false,
         stopOnErr: true,
     });
@@ -54,13 +54,14 @@ interface IPackageTemplate {
     browser: string;
     scripts: Record<string, string>;
     devDependencies: Record<string, string>;
+    "sheetleeten-config-start": string;
     posthtml: {
         plugins: {
             "posthtml-expressions": {
                 locals: IAppSettings;
             }
         }
-    },
+    };
     postcss: {
         plugins: {
             "postcss-simple-vars": {
@@ -69,21 +70,21 @@ interface IPackageTemplate {
                 }
             }
         }
-    }
+    };
+    "sheetleeten-config-end": string;
 }
 
 async function createPackage(target: string) {
     const now = new Date();
     const year = now.getFullYear();
+    const packageJSON = await extractFromPackage();
 
     const packageTemplate: IPackageTemplate = {
         name: basename(target),
         version: "1.0.0",
         browser: "src/index.html",
-        scripts: {
-            "serve": "parcel serve -d site --no-cache src/index.html",
-            "build": "parcel build -d site --no-cache src/index.html",
-        },
+        ...packageJSON,
+        "sheetleeten-config-start": "🔍",
         posthtml: {
             plugins: {
                 "posthtml-expressions": {
@@ -117,14 +118,14 @@ async function createPackage(target: string) {
                 }
             }
         },
-        devDependencies: await extractDevDependencies(),
+        "sheetleeten-config-end": "🔍",
     };
 
     const packageData = JSON.stringify(packageTemplate, null, 2);
     await writeFile(join(target, "package.json"), packageData);
 }
 
-async function extractDevDependencies(): Promise<IPackageTemplate["devDependencies"]> {
+async function extractFromPackage(): Promise<Pick<IPackageTemplate, "scripts" | "devDependencies">> {
     const packageJSON = await readFile(join(__dirname, "..", "package.json"));
     const packageData = JSON.parse(packageJSON.toString());
 
@@ -145,5 +146,14 @@ async function extractDevDependencies(): Promise<IPackageTemplate["devDependenci
         return map;
     }, {});
 
-    return deps;
+    const {scripts} = packageData;
+    const {serve, build} = scripts;
+
+    return {
+        devDependencies: deps,
+        scripts: {
+            serve,
+            build,
+        },
+    };
 }

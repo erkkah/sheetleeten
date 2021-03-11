@@ -1,10 +1,9 @@
 ---
 title: My site
-sections: ["intro"]
+after: ["intro"]
 ---
 ## [book](mdi) This is the index page
 
 Lorem ipsum, et.c.
 
-The following section is the "intro.md" included in the frontmatter  of this file.
-
+The following section is the "intro&#46;md" included in the frontmatter  of this file.

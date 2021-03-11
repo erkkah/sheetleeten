@@ -4,6 +4,7 @@ window.addEventListener("popstate", (ev) => {
     load(document.URL);
     const state = ev.state;
     if (!(state?.sheetleeten)) {
+        // Only scroll to top for new page views.
         window.scrollTo(0, 0);
         history.replaceState({sheetleeten: true}, "");
     }
@@ -23,7 +24,6 @@ function load(urlString: string) {
     
     const anchors = document.getElementsByTagName("a");
     for (const anchor of anchors) {
-        console.log(anchor.href, urlString);
         if (anchor.href == urlString) {
             anchor.classList.add("target");
         }
@@ -42,13 +42,21 @@ function build(pageName: string) {
 
     const page = sections[pageName] || sections["404"];
     if (!page) {
-        addSection(content, "404 :(");
+        addSection(content, "<pre><code>\n ¯\\(°_o)/¯\n\n</code></pre>");
+        return;
     }
 
-    const sectionNames = page.meta.sections || [];
+    const beforeSections = page.meta.before || [];
+    const afterSections = page.meta.after || [];
+
+    for (const sectionName of beforeSections) {
+        const section = sections[sectionName];
+        addSection(content, section.html)
+    }
+    
     page.html.trim() && addSection(content, page.html);
 
-    for (const sectionName of sectionNames) {
+    for (const sectionName of afterSections) {
         const section = sections[sectionName];
         addSection(content, section.html)
     }

@@ -1,6 +1,7 @@
 ---
 title: "Sheetleeten - Themes"
-sections: ["links"]
+before: ["links"]
+after: ["links"]
 ---
 
 ## Page layout
@@ -8,6 +9,10 @@ Sheetleeten uses a simple fixed page layout with a centered content column, a he
 
 ## Themes
 The site theme is specified using the `theme` configuration variable, which selects one of the theme files in the `src/themes` directory.
+
+See the examples of the included themes [here](#preview).
+
+## Creating a theme
 
 The theme files are small CSS files specifying the theme **fonts**, **colors**, and **decorations**.
 
@@ -66,7 +71,7 @@ Check the "calc" theme for an example.
 
 ### Decorations
 
-The team can also set the style of section dividers, heading decorations and rule decorations. This is an example from the "coffee" theme:
+The theme can also set the style of section dividers, heading decorations and rule decorations. This is an example from the "coffee" theme:
 
 ```css
 :root {
