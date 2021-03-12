@@ -11,6 +11,12 @@
     "themed",
     "skitliten"
   ],
+  "author": "Erik Agsjö",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/erkkah/sheetleeten.git"
+  },
   "browser": "src/index.html",
   "bin": {
     "@erkkah/sheetleeten": "bin/sheetleeten",
@@ -21,8 +27,6 @@
     "build": "rimraf prod && parcel build -d prod --no-cache --no-source-maps src/index.html",
     "build:cli": "tsc"
   },
-  "author": "Erik Agsjö",
-  "license": "MIT",
   "devDependencies": {
     "@babel/preset-env": "7.13.8",
     "@types/inquirer": "^7.3.1",
