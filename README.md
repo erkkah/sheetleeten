@@ -22,7 +22,7 @@ Total                        5       513       82        33      398         16
 
 **It's easy to theme:**
 
-![](https://coloredco.de/github.com/erkkah/sheetleeten/src/themes/coffee.css)
+[![](https://coloredco.de/github.com/erkkah/sheetleeten/blob/main/src/themes/coffee.css?columns=120)](src/themes/coffee.css)
 
 **It's fast to get started (and to get done):**
 ```shell
