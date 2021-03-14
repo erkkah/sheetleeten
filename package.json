@@ -24,8 +24,9 @@
   },
   "scripts": {
     "serve": "rimraf dev && parcel serve -d dev --no-cache src/index.html",
-    "build": "rimraf prod && parcel build -d prod --no-cache --no-source-maps src/index.html",
-    "build:cli": "tsc"
+    "build": "rimraf prod && parcel build -d prod --no-cache --no-source-maps --public-url ./ src/index.html",
+    "build:cli": "tsc",
+    "publish:gh": "npm run build && ./publish.sh"
   },
   "devDependencies": {
     "@babel/preset-env": "7.13.8",
