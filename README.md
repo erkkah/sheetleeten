@@ -3,6 +3,9 @@
 
 *Oh, just what we needed - yet another static site generator!* :+1:
 
+### Documentation :book:
+Sheetleeten-generated [docs](https://erkkah.github.io/sheetleeten).
+
 ### But why:question:
 
 **It's tiny:**
