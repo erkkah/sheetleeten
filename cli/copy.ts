@@ -14,7 +14,7 @@ export async function copyFiles(target: string) {
 
     await mkdir(target, { recursive: true });
     await createPackage(target);
-    await copy(join(__dirname, "..", ".gitignore"), join(target, ".gitignore"), {
+    await copy(join(__dirname, "..", "cli", "dot.gitignore"), join(target, ".gitignore"), {
         clobber: false,
         stopOnErr: true,
     });
