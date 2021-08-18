@@ -1,6 +1,6 @@
 {
   "name": "sheetleeten",
-  "version": "0.8.3",
+  "version": "0.8.4",
   "description": "Tiny Markdown-driven themed static site generator",
   "keywords": [
     "tiny",
@@ -27,7 +27,7 @@
     "build": "rimraf prod && parcel build -d prod --no-cache --no-source-maps --public-url ./ src/index.html",
     "build:cli": "tsc",
     "publish:gh": "npm run build && ./publish.sh",
-    "prepublish": "npm run build:cli"
+    "prepack": "npm run build:cli"
   },
   "devDependencies": {
     "@babel/preset-env": "7.13.8",
